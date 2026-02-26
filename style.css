@@ -1,0 +1,237 @@
+/* ================= GLOBAL ================= */
+
+body {
+    font-family: 'Jersey 20', sans-serif;
+    letter-spacing: 1.5px;
+    margin: 0;
+    background: url('assets/xp.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0, 40, 120, 0.35),
+        rgba(0, 120, 60, 0.35)
+    );
+    z-index: -1;
+}
+
+body::after {
+    content: "ᯓ ⋆˚˙⋆✮ ݁˖⭑.ᐟ✦✮˚˙⋆ᯓ";
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 18px;
+    color: white;
+}
+
+/* ================= NAVBAR FLOATING ================= */
+
+.navbar {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1350px;
+    z-index: 1000;
+    padding: 10px 25px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.navbar .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+.nav-link {
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s;
+}
+
+.pill {
+    color: #ffffff !important;
+    font-weight: 100;
+    padding: 6px 20px;
+    border-radius: 40px;
+    margin-left: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.543);
+    transition: 0.2s ease;
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.nav-pill {
+    color: #0082ec !important;
+    font-weight: 100;
+    padding: 6px 20px;
+    border-radius: 40px;
+    margin-left: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.543);
+    transition: 0.2s ease;
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.nav-pill:hover {
+    transform: scale(1.05);
+}
+
+/* ================= HERO ================= */
+
+.hero-section {
+    position: relative;
+    padding-top: 200px;
+    padding-bottom: 100px;
+    overflow: hidden;
+}
+
+.hero-decor {
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;         
+    max-width: 50%;
+    z-index: 1;
+    pointer-events: none;
+    filter: drop-shadow(0 40px 60px rgba(0,0,0,0.35));
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-name {
+    font-size: 100px;
+    font-weight: 1000;
+    color: #ffffff;
+    background: linear-gradient(90deg, #ffffff, #f5fff0, #ffffff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(255, 251, 251, 0.345);
+}
+
+.hero-role {
+    font-size: 35px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 0 15px #ffffff89;
+}
+
+.hero-desc {
+    font-size: 18px;
+    color: #ffffff;
+    max-width: 520px;
+}
+
+/* ================= card ================= */
+
+.card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 255, 0.15);
+}
+
+/* ================= progress bar ================= */
+
+.progress {
+    height: 18px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.3);
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #12ee07, #fbfbfb);
+    box-shadow: 0 0 15px #fff;
+    font-weight: 600;
+}
+
+/* ================= image ================= */
+
+.full-image {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.full-image img {
+    filter: contrast(1.05) brightness(0.98);
+    transition: 0.4s ease;
+    width: 50%;
+    height: 50px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ================= nge-blurin bagian sertif  ================= */
+
+.certificates-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.certificates-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    mask-image: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,1) 40%
+    );
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,1) 40%
+    );
+
+    z-index: 0;
+}
+
+.certificates-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ================= footer ================= */
+
+.footer-section {
+    background: rgba(255, 255, 255, 0.4);  
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255,255,255,0.3);
+    height: auto;
+}
