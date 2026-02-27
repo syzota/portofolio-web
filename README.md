@@ -1,4 +1,5 @@
-<img width="1920" height="1200" alt="Screenshot (200)" src="https://github.com/user-attachments/assets/0a34f7c9-3890-4a16-9932-3120ab4fb776" /><h1 align="center">✮ Personal Portfolio: To the Passengers!</h1>
+<img width="2000" height="500" alt="gitov" src="https://github.com/user-attachments/assets/33ab737e-c279-45d9-87f0-5b072af2ecb9"
+ /><h1 align="center">✮ Personal Portfolio: To the Passengers!</h1>
 <p align="center">
   <i>A repository made for the Website-Based Programming for course in practicum; was made by Putri Syafana Afrillia (NIM: 2409116015). </i>
 </p>
@@ -8,6 +9,19 @@
 Mini Project ini merupakan dokumentasi hasil pembuatan website sederhana **Portofolio** berbasis **HTML dan CSS**, menggunakan _VUE JS dan Bootstrap_.
 
 ---
+
+## **Table of Contents** 📋.ᐟ
+
+* [**Introduction** ★](#introduction-)
+* [**Portofolio Hands-On** ⸝⸝.ᐟ⋆.ᐟ](#portofolio-hands-on-)
+    * [Features Checklist](#features-checklist-)
+    * [Tools and Tech Stack](#tools-and-tech-stack-)
+* [**Implemented Features** ᯓ★](#implemented-features-)
+* [**Project Documentations** ⋆˚࿔.ᐟ](#project-documentations-)
+    * [Library Structure](#library-structure--️)
+    * [Program Flows & GUI](#program-flows--graphical-user-interface-gui-)
+* [**Bonus Scores** ゛⸝⸝.ᐟ⋆](#bonus-scores-)
+* [**Style Classes (CSS Explanation)** —͟͟͞͞★](#style-classes-in-the-css-)
 
 ## **Portofolio Hands-On** ⸝⸝.ᐟ⋆.ᐟ
 ### Features Checklist ᯓ★
@@ -20,6 +34,36 @@ Mini Project ini merupakan dokumentasi hasil pembuatan website sederhana **Porto
 - [x] Integrasi Vue JS dan Bootstrap
 - [x] Penggunaan struktur dasar HTML dan CSS untuk styling
 - [x] Rapi, responsif dan statis.
+
+### Tools and Tech Stack ᯓ★
+
+Seluruh _dependency_ _framework_ di-_load_ secara eksternal melalui CDN (Content Delivery Network), sehingga proyek bersifat portable dan dapat dijalankan langsung tanpa proses instalasi atau build tools (NPM atau Webpack).
+
+### Core Technologies ⍟
+
+- [x] **HTML5** – Digunakan sebagai struktur semantik dasar halaman.
+- [x] **CSS3** – Kustomisasi UI, implementasi Glassmorphism, dan layouting transisi.
+- [x] **JavaScript** (ES6) – Digunakan untuk inisialisasi framework dan logika data.
+
+### Frameworks & Libraries (CDN Powered) ⍟
+
+- [x] **Bootstrap** 5.3.2 – Digunakan untuk Grid System, Responsive Layout, dan komponen UI.
+- [x] **Vue JS** 3 (Global Build) – Digunakan untuk reactive data binding pada section Skillset dan Certificates melalui instance createApp.
+- [x] **Google Fonts API** – Memuat font Jersey 20 dan Poppins untuk tipografi yang estetis.
+
+### Development Tools ⍟
+- [x] VS Code – Sebagai code editor utama dalam penulisan sintaks.
+- [x] Live Server – Ekstensi VS Code untuk real-time preview saat proses coding.
+- [x] Browser Developer Tools – Digunakan untuk debugging web.
+
+## Implemented Features ᯓ★
+Berikut adalah rangkuman fitur yang sudah berhasil diimplementasikan sesuai dengan instruksi tugas:
+
+- [x] Section Home (Hero Section) – Perkenalan utama dengan dekorasi visual.
+- [x] Section About Me / Skillset – Deskripsi diri dan pengalaman organisasi.
+- [x] Section Certificates (Grid Layout) – Penampilan sertifikat dalam bentuk card yang rapi.
+- [x] Progress Bar untuk Skillset – Visualisasi level keahlian menggunakan komponen Bootstrap.
+- [x] Navigate Bar dan Gambar – Navigasi yang fungsional dan penggunaan aset gambar yang optimal.
 
 # **Project Documentations** ⋆˚࿔.ᐟ
 
@@ -250,8 +294,264 @@ Kode di bawah ini dipakai untuk kustomisasi atau personalisasi nama browser dan 
     <link rel="stylesheet" href="style.css" />
 </head>
 ```
+## Style Classes in the CSS —͟͟͞͞★
+
+### Global Styles & Body Configuration ⍟
+Pada bagian Global, pengaturan difokuskan pada pembentukan identitas visual dasar seluruh halaman. Background website menggunakan gambar statis yang diatur dengan background-size: cover agar tetap penuh di segala ukuran layar, sementara pseudo-element body::before memberikan lapisan gradasi warna biru-hijau transparan supaya teks di atasnya tetap kontras dan nyaman dibaca.
+
+``` css
+body {
+    font-family: 'Jersey 20', sans-serif;
+    letter-spacing: 1.5px;
+    margin: 0;
+    background: url('assets/xp.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0, 40, 120, 0.35),
+        rgba(0, 120, 60, 0.35)
+    );
+    z-index: -1;
+}
+
+body::after {
+    content: "ᯓ ⋆˚˙⋆✮ ݁˖⭑.ᐟ✦✮˚˙⋆ᯓ";
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 18px;
+    color: white;
+}
+
+```
+###  Navbar Floating & Navigation Pill ⍟
+Bagian CSS Navbar bertujuan menciptakan efek melayang (_floating_) di tengah atas layar menggunakan kombinasi position: fixed dan transform: translateX(-50%). Di sini diimplementasikan teknik Glassmorphism melalui backdrop-filter: blur(20px) dan background rgba putih transparan yang membuat navbar terlihat menyatu namun tetap terpisah dari konten di belakangnya. Class .pill dan .nav-pill ditambahkan untuk memberikan bentuk lonjong pada tombol navigasi lengkap dengan efek glow saat diarahkan kursor.
 
 
+``` css
+.navbar {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1350px;
+    z-index: 1000;
+    padding: 10px 25px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
 
+.navbar .container {
+    position: relative;
+    z-index: 2;
+}
+
+.nav-link {
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s;
+}
+
+.pill {
+    color: #ffffff !important;
+    font-weight: 100;
+    padding: 6px 20px;
+    border-radius: 40px;
+    margin-left: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.543);
+    transition: 0.2s ease;
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.nav-pill {
+    color: #0082ec !important;
+    font-weight: 100;
+    padding: 6px 20px;
+    border-radius: 40px;
+    margin-left: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.543);
+    transition: 0.2s ease;
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.nav-pill:hover {
+    transform: scale(1.05);
+}
+
+```
+
+### Hero Section & Typography ⍟
+Untuk bagian Hero, CSS mengatur tata letak perkenalan utama agar tetap lapang dengan padding-top: 200px. Hal yang paling menonjol adalah class .hero-name yang menggunakan background-clip: text untuk memberikan warna gradasi pada tulisan nama. Selain itu, terdapat pengaturan .hero-decor yang memposisikan gambar dekoratif secara absolut agar bisa bertumpuk secara estetis tanpa mengganggu alur teks perkenalan di kolom sebelahnya.
+
+```css
+.hero-section {
+    position: relative;
+    padding-top: 200px;
+    padding-bottom: 100px;
+    overflow: hidden;
+}
+
+.hero-decor {
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;         
+    max-width: 50%;
+    z-index: 1;
+    pointer-events: none;
+    filter: drop-shadow(0 40px 60px rgba(0,0,0,0.35));
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-name {
+    font-size: 100px;
+    font-weight: 1000;
+    color: #ffffff;
+    background: linear-gradient(90deg, #ffffff, #f5fff0, #ffffff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(255, 251, 251, 0.345);
+}
+
+.hero-role {
+    font-size: 35px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 0 15px #ffffff89;
+}
+
+.hero-desc {
+    font-size: 18px;
+    color: #ffffff;
+    max-width: 520px;
+}
+```
+
+### Card & Progress Bar Component ⍟
+Komponen Card diatur agar memiliki tampilan semi-transparan yang konsisten dengan tema navbar. Penambahan properti transition: 0.4s pada kartu memastikan adanya animasi halus saat kartu bergerak ke atas (translateY) ketika di-hover. Sementara itu, untuk bagian Progress Bar, gaya bawaan Bootstrap diubah menjadi lebih futuristik dengan gradasi warna hijau menyala dan efek bayangan (box-shadow) putih yang memberikan kesan bar tersebut sedang bersinar atau aktif.
+
+```css
+/* ================= card ================= */
+
+.card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 255, 0.15);
+}
+
+/* ================= progress bar ================= */
+
+.progress {
+    height: 18px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.3);
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #12ee07, #fbfbfb);
+    box-shadow: 0 0 15px #fff;
+    font-weight: 600;
+}
+```
+
+### Image Handling & Responsibility ⍟
+Bagian CSS Image Handling bertugas memastikan seluruh aset visual dalam website, seperti postcard dan elemen dekoratif, tampil responsif mengikuti lebar kontainer dengan menggunakan class .full-image. Pengaturan width: 100% dipadukan dengan properti filter: contrast(1.05) brightness(0.98) memberikan sentuhan akhir pada gambar agar terlihat lebih tajam dan menyatu dengan tema perngkat.
+
+```css
+.full-image {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.full-image img {
+    filter: contrast(1.05) brightness(0.98);
+    transition: 0.4s ease;
+    width: 50%;
+    height: 50px;
+    object-fit: cover;
+    display: block;
+}
+```
+
+### Advanced Effects: Masking & Footer ⍟
+Pada bagian akhir, terdapat kustomisasi tingkat lanjut pada .certificates-section yang menggunakan teknik mask-image. Fungsinya adalah untuk menciptakan transisi buram yang halus di bagian atas section sertifikat agar tidak terlihat terpotong tajam saat user melakukan scrolling. Terakhir, bagian Footer dirancang sangat minimalis dengan background transparan dan border atas yang tipis, berfungsi sebagai penutup halaman yang elegan tanpa mengalihkan perhatian dari konten utama.
+
+```css
+.certificates-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.certificates-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    mask-image: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,1) 40%
+    );
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,1) 40%
+    );
+
+    z-index: 0;
+}
+
+.certificates-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ================= footer ================= */
+
+.footer-section {
+    background: rgba(255, 255, 255, 0.4);  
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255,255,255,0.3);
+    height: auto;
+}
+```
 
 
