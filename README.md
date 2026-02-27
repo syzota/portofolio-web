@@ -553,5 +553,8 @@ Pada bagian akhir, terdapat kustomisasi tingkat lanjut pada .certificates-sectio
     height: auto;
 }
 ```
+<p align="center">
+  <i>© 2026 - To the Passengers by Putri. All rights reserved. </i>
+</p>
 
 
