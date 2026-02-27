@@ -195,7 +195,7 @@ Di sini berisi deskripsi pengalaman dan _skillset_ yang divisualisasikan dengan 
 
 ### Certificates Gallery .✦ ݁˖
 
-Daftar sertifikat disusun menggunakan _Bootstrap Card_ di dalam sistem _grid_ agar rapi di berbagai ukuran _device_, misalnya jika dibuka pada perangkat _mobile_, akan tersusun ke bawah. Mulai _page_ ini sampai footer, efek blue perlahan-lahan muncul jika pengguna menggulir ke bawah.
+Daftar sertifikat disusun menggunakan _Bootstrap Card_ di dalam sistem _grid_ agar rapi di berbagai ukuran _device_, misalnya jika dibuka pada perangkat _mobile_, akan tersusun ke bawah. Mulai _page_ ini sampai footer, efek blur perlahan-lahan muncul jika pengguna menggulir ke bawah.
 
 <img width="1920" height="1200" alt="Screenshot (200)" src="https://github.com/user-attachments/assets/99803488-dbce-4c97-943e-08128bbb65b7" />
 
