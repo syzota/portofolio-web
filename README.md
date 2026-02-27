@@ -1,6 +1,7 @@
-# **Mini Project: Personal Portfolio - To the Passengers ✮**
-<img width="2000" height="500" alt="gitov" src="https://github.com/user-attachments/assets/1907c049-1bea-46ac-bf23-4876a7e7cc25" />
-A repository made for the Website-Based Programming for course in practicum. **Was made by Putri Syafana Afrillia (NIM: 2409116015).**
+<img width="1920" height="1200" alt="Screenshot (200)" src="https://github.com/user-attachments/assets/0a34f7c9-3890-4a16-9932-3120ab4fb776" /><h1 align="center">✮ Personal Portfolio: To the Passengers!</h1>
+<p align="center">
+  <i>A repository made for the Website-Based Programming for course in practicum; was made by Putri Syafana Afrillia (NIM: 2409116015). </i>
+</p>
 
 ## **Introduction** ★
 
@@ -36,13 +37,37 @@ Below is the structure of the **_library_ folder** which contains the main codes
 
 ```
 
-## **Main Scores** ୭ ˚. ᵎᵎ .ᐟ
+## Program Flows ⭑ & Graphical User Interface (GUI) —͟͟͞͞★
 
+### Navigation Bar ⍟
 
+<img width="1789" height="103" alt="image" src="https://github.com/user-attachments/assets/cd157ecf-32b3-475a-b8ef-8e0068101a67" />
+
+Navigasi ini menggunakan komponen dari **Bootstrap 5** yang dimodifikasi menjadi _floating_ menggunakan CSS custom. Komponen ini tetap berada di atas halaman (_fixed-top_) untuk memudahkan navigasi pengguna.
+
+``` html
+<body>
+    <div id="app">
+        <nav class="navbar fixed-top custom-navbar">
+            <div class="container">
+                <div class="d-flex align-items-center">
+                    <img src="assets/icons/sticky_note.png" alt="logo" class="me-2" style="width:28px;">
+                    <a class="navbar-brand fw-bold text-white" style="text-shadow: 3px 3px 3px rgba(255, 255, 255, 0.08);" href="#">Portofolio</a>
+                </div>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold nav-pill" href="#home">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+```
 
 ### Home & Hero ⍟
 
-Bagian ini menampilkan halaman utama dengan menggunakan `Bootstrap Container` untuk menjaga konten tetap di tengah. Di sini banyak gambar dekoratif yang ditambahkan yang tujuannya agar website tidak terkesan membosankan. Banyak pula class yang diambil dari CSS yang mengatur supaya tombol teks dan gambar sesuai dengan format yang diinginkan juga konsisten.
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/941539ed-33a2-4944-bae8-adbbdf5667e9" />
+
+Bagian ini menampilkan halaman utama dengan menggunakan **Bootstrap Container** untuk menjaga konten tetap di tengah. Di sini banyak gambar dekoratif yang ditambahkan yang tujuannya agar website tidak terkesan membosankan. Banyak pula class yang diambil dari CSS yang mengatur supaya tombol teks dan gambar sesuai dengan format yang diinginkan juga konsisten.
 
 ``` html
         <section id="home" class="hero-section">
@@ -65,225 +90,167 @@ Bagian ini menampilkan halaman utama dengan menggunakan `Bootstrap Container` un
             <img src="assets/skill.png" class="full-image hero-decor">
         </section>
 ```
-### Show Cart Items with Quantity .✦ ݁˖
+Berikut adalah bagian perkenalan diri yang juga menjadi bagian dari _Hero Section_, terdiri dari nama, status, dan _button_ untuk lompat ke bagian _About Me_.
 
-Fitur ini menampilkan seluruh produk yang telah ditambahkan ke keranjang beserta jumlah (quantity)-nya. Implementasi berada pada cart_page.dart, dengan memanfaatkan Consumer<CartModel> untuk membaca daftar item.
+<img width="1920" height="1200" alt="Screenshot (197)" src="https://github.com/user-attachments/assets/06e347e0-3473-41e7-95ec-1179df167320" />
 
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/cdc3d369-b966-408e-bb4f-32233e10627c" />
+Di bawah ini adalah gambar pelengkap yang menunjukkan bahwa pengguna sedang menggulir ke bagian bawah (_skillset/about_).
 
-``` dart
-Consumer<CartModel>(
-  builder: (context, cart, child) {
-    return ListView(
-      children: cart.itemsList.map(
-        (item) => ListTile(
-          title: Text(item.product.name),
-          subtitle: Text('Qty: ${item.quantity}'),
-          trailing: Text(
-            'Rp ${item.totalPrice.toStringAsFixed(0)}',
-          ),
-        ),
-      ).toList(),
-    );
-  },
-)
-```
-### Update Quantity (+/-) .✦ ݁˖
+<img width="1920" height="1200" alt="Screenshot (198)" src="https://github.com/user-attachments/assets/5ce1c2e9-bfca-4a1b-8baf-f7c9b1a3c720" />
 
-Fitur ini memungkinkan pengguna menambah atau mengurangi jumlah produk dalam keranjang. Implementasi dilakukan pada cart_page.dart, yang memanggil method increaseQuantity() dan decreaseQuantity() di dalam cart_model.dart.
+### About Me .✦
 
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/9b205029-1c21-48b9-abab-957fd0c2317f" />
+Di sini berisi deskripsi pengalaman dan _skillset_ yang divisualisasikan dengan Bootstrap Progress Bar, kedua bagian dibungkus dengan masing-masing _card_ yang juga di-_styling_ lewat CSS.
+
+<img width="1920" height="1200" alt="Screenshot (199)" src="https://github.com/user-attachments/assets/1978c6ed-ba72-47fd-a35a-46561af4f4ed" />
 
 ``` dart
-IconButton(
-  icon: const Icon(Icons.add),
-  onPressed: () {
-    context.read<CartModel>().increaseQuantity(item.product);
-  },
-),
+        <section id="about" class="py-5">
+            <div class="container">
+                <h2 class="hero-name text-center">Skillset ✮ </h2>
+                <p class="text-center hero-role mb-5">It's not about these; it's about gaining and lock your self.</p>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold hero-role text-center mb-4">Skills ✪</h5>
+                                <div v-for="skill in skills" :key="skill.name" class="mb-3">
+                                    <p class="text-white mb-1">{{ skill.name }}</p>
+                                    <div class="progress">
+                                        <div class="progress-bar" :style="{ width: skill.level + '%' }">
+                                            {{ skill.level }}%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-IconButton(
-  icon: const Icon(Icons.remove),
-  onPressed: () {
-    context.read<CartModel>().decreaseQuantity(item.product);
-  },
-),
+                    <div class="col-md-6 mb-4">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold hero-role text-center mb-4">Experiences ✪</h5>
+                                <div class="row align-items-center">
+                                    <div class="col-5">
+                                        <img src="assets/head.png" class="img-fluid">
+                                    </div>
+                                    <div class="col-7">
+                                        <p class="hero-desc">
+                                            An IT student who has grown through more than 20 committees, five organizations, currently serve as Head of the Advocacy. I've carried the responsibility of being class representative. With a GPA of 3.98, I keep pushing the better out of me.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 ```
 
-Method di cart_model.dart:
+### Certificates Gallery .✦ ݁˖
 
-``` dart
-void increaseQuantity(Product product) {
-  final item =
-      _items.firstWhere((item) => item.product.id == product.id);
-  item.quantity++;
-  notifyListeners();
-}
+Daftar sertifikat disusun menggunakan _Bootstrap Card_ di dalam sistem _grid_ agar rapi di berbagai ukuran _device_, misalnya jika dibuka pada perangkat _mobile_, akan tersusun ke bawah. Mulai _page_ ini sampai footer, efek blue perlahan-lahan muncul jika pengguna menggulir ke bawah.
 
-void decreaseQuantity(Product product) {
-  final index =
-      _items.indexWhere((item) => item.product.id == product.id);
+<img width="1920" height="1200" alt="Screenshot (200)" src="https://github.com/user-attachments/assets/99803488-dbce-4c97-943e-08128bbb65b7" />
 
-  if (_items[index].quantity > 1) {
-    _items[index].quantity--;
-  } else {
-    _items.removeAt(index);
-  }
 
-  notifyListeners();
-}
+``` html
+        <section id="certificates" class="py-5 certificates-section">
+            <div class="container">
+                <h2 class="text-center fw-bold mb-5 hero-name">Certificates ࣪𖤐 </h2>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4" v-for="cert in certs" :key="cert.title">
+                        <div class="card shadow-sm h-100 text-center">
+                            <img :src="cert.img" class="card-img-top">
+                            <div class="card-body">
+                                <h6 class="fw-bold text-white">{{ cert.title }}</h6>
+                                <p class="small text-white">{{ cert.year }}</p>
+                                <a :href="cert.img" target="_blank" class="pill">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 ```
 
-### Remove Items from Cart .✦ ݁˖
+### Footer .✦ ݁˖
 
-Fitur ini memungkinkan pengguna menghapus produk secara langsung dari keranjang. Implementasi dilakukan melalui method removeItem() pada cart_model.dart.
+Model _footer_ biasa yang _background_-nya diatur blur lewat CSS. 
 
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/97384040-71d5-4bf6-95da-d4c05684d7a7" />
+<img width="1903" height="140" alt="image" src="https://github.com/user-attachments/assets/dcb77082-86c2-44e4-83b6-c155f2b24652" />
 
-``` dart
-void removeItem(Product product) {
-  _items.removeWhere((item) => item.product.id == product.id);
-  notifyListeners();
-}
+``` html
+        <footer class="footer-section text-center py-4">
+            <p class="hero-desc mx-auto">© 2026 - To the Passengers by Putri. All rights reserved.</p>
+        </footer>
+    </div>
 ```
 
-Pemanggilan di cart_page.dart:
-
-``` dart
-IconButton(
-  icon: const Icon(Icons.delete),
-  onPressed: () {
-    context.read<CartModel>().removeItem(item.product);
-  },
-),
-```
-
-### Display Total Price Correctly .✦ ݁˖
-
-Fitur ini menghitung dan menampilkan total harga seluruh item dalam keranjang. Perhitungan dilakukan pada cart_model.dart menggunakan getter totalPrice
-
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/80b8a4d2-d7cb-4e13-9721-21b441e7343b" />
-
-``` dart
-double get totalPrice {
-  return _items.fold(
-    0,
-    (sum, item) => sum + item.totalPrice,
-  );
-}
-}
-```
-
-Pemanggilan di halaman cart atau checkout:
-
-``` dart
-Text(
-  'Total: Rp ${cart.totalPrice.toStringAsFixed(0)}',
-)
-```
 ## **Bonus Scores ゛⸝⸝.ᐟ⋆
 
-### Search / Filter .✦ ݁˖
+### Bootstrap 5 .✦ ݁˖
 
-Fitur ini memungkinkan pengguna mencari produk berdasarkan nama. Implementasi dilakukan pada product_list_page.dart dengan memanfaatkan TextField untuk menangkap input pencarian dan melakukan filtering pada daftar produk menggunakan method where().
+Nilai tambah diterpkan pada pemanfaatan komponen dari Bootstrap seperti di bawah ini.
 
-<img width="922" height="1124" alt="image" src="https://github.com/user-attachments/assets/91ba83ec-d2e5-4e65-a1c4-274c6a0f80cf" />
+| Nama                        | Keterngan                                                                   |
+| --------------------------- | --------------------------------------------------------------------------- |
+| **Navbar**                  | Navigasi yang tetap berada di atas saat di-scroll.                          |
+| **Responsive Breakpoints**  | Menggunakan col-lg-6 dan col-md-4 agar tampilan menyesuaikan HP/Laptop.     |
+| **Spacing Utilities**       | Penggunaan py-5, mt-4, dan mb-5 untuk tata letak yang rapi                  |
 
-``` dart
-TextField(
-  decoration: const InputDecoration(
-    hintText: 'Search product...',
-    prefixIcon: Icon(Icons.search),
-  ),
-  onChanged: (value) {
-    setState(() {
-      searchQuery = value;
-    });
-  },
-),
+### Vue JS .✦ ݁˖
+
+Menggunakan Vue JS untuk mengelola data, sehingga daftar skill dan sertifikat tidak ditulis manual berkali-kali di HTML, melainkan menggunakan _v-for_.
+
+``` html
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue
+        createApp({
+            data() {
+                return {
+                    skills: [
+                        { name: '.𖥔 ݁ Communication', level: 99 },
+                        { name: '˖ ✦ Designing', level: 80 },
+                        { name: '✮ ⋆ Developing', level: 75 },
+                        { name: '˚｡𖦹 Team-work', level: 71 },
+                        { name: ' 𓆩✶𓆪 Leadership', level: 70 }
+                    ],
+                    certs: [
+                        { title: 'Ketua Panitia Mubes INFORSA', year: '2026', img: 'assets/mubes.jpg' },
+                        { title: 'Fullstack Web Developer', year: '2025', img: 'assets/stack.png' },
+                        { title: 'Ketua Panitia Makrab TAROT', year: '2024', img: 'assets/makrab.png' }
+                    ]
+                }
+            }
+        }).mount('#app')
+    </script>
 ```
 
-Berikut logika filtering-nya.
+### More Details .✦ ݁˖
 
-``` dart
-final filteredProducts = products.where((product) {
-  final matchesSearch =
-      product.name.toLowerCase().contains(searchQuery.toLowerCase());
-  return matchesSearch;
-}).toList();
-```
-Fungsi where() menyaring daftar produk berdasarkan kecocokan nama dengan input pengguna. Ketika setState() dipanggil, tampilan akan diperbarui secara otomatis.
+Kode di bawah ini dipakai untuk kustomisasi atau personalisasi nama browser dan ikon yang muncul di tab browser. Ada juga  _import_ font dari luar _library_, di konteks ini digunakan dari Google, lalu diikuti tautan CDN dari Bootstrap.
 
-### Categories .✦ ݁˖
+``` html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To the Passengers.</title>
+    <link rel="icon" type="image/png" href="assets/icons/paint_alt.png">
 
-Fitur ini memungkinkan pengguna memfilter produk berdasarkan kategori tertentu. Implementasi dilakukan menggunakan DropdownButton pada product_list_page.dart, yang akan memperbarui variabel kategori aktif dan memfilter produk sesuai kategori tersebut.
-
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/16065a70-9d6c-4053-ac74-6184d0a90869" />
-
-``` dart
-TextField(
-  decoration: const InputDecoration(
-    hintText: 'Search product...',
-    prefixIcon: Icon(Icons.search),
-  ),
-  onChanged: (value) {
-    setState(() {
-      searchQuery = value;
-    });
-  },
-),
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+20&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
 ```
 
-Berikut logika filtering-nya.
-
-``` dart
-final filteredProducts = products.where((product) {
-  final matchesSearch =
-      product.name.toLowerCase().contains(searchQuery.toLowerCase());
-  return matchesSearch;
-}).toList();
-```
-
-### Checkout Page .✦ ݁˖
-
-Halaman ini memanfaatkan data dari CartModel untuk memastikan total harga dan item tetap sinkron dengan state aplikasi. Fitur ini menyediakan halaman ringkasan pesanan dan formulir sederhana untuk proses checkout. Implementasi berada pada checkout_page.dart, yang menampilkan daftar item, total harga, serta form input data pengguna. Berikut navigasi ke halaman checkout:
-
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/6a9881d9-1228-48f6-9caa-be9cca88e5cc" />
-
-``` dart
-ElevatedButton(
-  onPressed: () {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const CheckoutPage(),
-      ),
-    );
-  },
-  child: const Text('Checkout'),
-)
-```
-
-Berikut untuk menampilkan ringkasan pesanannya.
-
-``` dart
-Text(
-  'Total: Rp ${cart.totalPrice.toStringAsFixed(0)}',
-)
-```
-Dan form input simpel untuk nama pelanggan.
-
-``` dart
-TextField(
-  decoration: const InputDecoration(
-    labelText: 'Full Name',
-  ),
-),
-```
-
-Berikut tampilan ketika sudah menetapkan orderan.
-
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/6d0d898f-039c-4955-a954-077cf71334d4" />
 
 
 
