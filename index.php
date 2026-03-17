@@ -1,3 +1,18 @@
+<?php include 'koneksi.php'; ?>
+<?php
+
+$skillsResult = mysqli_query($conn, "SELECT * FROM skills");
+$skills = [];
+while ($row = mysqli_fetch_assoc($skillsResult)) {
+    $skills[] = $row;
+}
+
+$certsResult = mysqli_query($conn, "SELECT * FROM certificates");
+$certs = [];
+while ($row = mysqli_fetch_assoc($certsResult)) {
+    $certs[] = $row;
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -5,7 +20,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To the Passengers.</title>
     <link rel="icon" type="image/png" href="assets/icons/paint_alt.png">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+20&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -19,7 +33,7 @@
             <div class="container">
                 <div class="d-flex align-items-center">
                     <img src="assets/icons/sticky_note.png" alt="logo" class="me-2" style="width:28px;">
-                    <a class="navbar-brand fw-bold text-white" style="text-shadow: 3px 3px 3px rgba(255, 255, 255, 0.08);" href="#">Portofolio</a>
+                    <a class="navbar-brand fw-bold text-white" href="#">Portofolio</a>
                 </div>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -53,7 +67,6 @@
             <div class="container">
                 <h2 class="hero-name text-center">Skillset ✮ </h2>
                 <p class="text-center hero-role mb-5">It's not about these; it's about gaining and lock your self.</p>
-                
                 <div class="row">
                     <div class="col-md-6 mb-4">
                         <div class="card shadow-sm h-100">
@@ -121,18 +134,8 @@
         createApp({
             data() {
                 return {
-                    skills: [
-                        { name: '.𖥔 ݁ Communication', level: 99 },
-                        { name: '˖ ✦ Designing', level: 80 },
-                        { name: '✮ ⋆ Developing', level: 75 },
-                        { name: '˚｡𖦹 Team-work', level: 71 },
-                        { name: ' 𓆩✶𓆪 Leadership', level: 70 }
-                    ],
-                    certs: [
-                        { title: 'Ketua Panitia Mubes INFORSA', year: '2026', img: 'assets/mubes.jpg' },
-                        { title: 'Fullstack Web Developer', year: '2025', img: 'assets/stack.png' },
-                        { title: 'Ketua Panitia Makrab TAROT', year: '2024', img: 'assets/makrab.png' }
-                    ]
+                    skills: <?= json_encode(array_values($skills)) ?>,
+                    certs: <?= json_encode(array_values($certs)) ?>
                 }
             }
         }).mount('#app')
