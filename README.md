@@ -44,6 +44,8 @@ Seluruh _dependency_ _framework_ di-_load_ secara eksternal melalui CDN (Content
 - [x] **HTML5** – Digunakan sebagai struktur semantik dasar halaman.
 - [x] **CSS3** – Kustomisasi UI, implementasi Glassmorphism, dan layouting transisi.
 - [x] **JavaScript** (ES6) – Digunakan untuk inisialisasi framework dan logika data.
+- [x] **PHP** – Digunakan untuk koneksi dan pengambilan data dari database secara dinamis.
+- [x] **MySQL** – Database untuk menyimpan data skills dan certificates.
 
 ### Frameworks & Libraries (CDN Powered) ⍟
 
@@ -55,6 +57,8 @@ Seluruh _dependency_ _framework_ di-_load_ secara eksternal melalui CDN (Content
 - [x] VS Code – Sebagai code editor utama dalam penulisan sintaks.
 - [x] Live Server – Ekstensi VS Code untuk real-time preview saat proses coding.
 - [x] Browser Developer Tools – Digunakan untuk debugging web.
+- [x] Laragon – Local server environment untuk menjalankan PHP & MySQL.
+- [x] phpMyAdmin – Manajemen database MySQL secara visual.
 
 ## Implemented Features ᯓ★
 Berikut adalah rangkuman fitur yang sudah berhasil diimplementasikan sesuai dengan instruksi tugas:
@@ -76,7 +80,8 @@ Below is the structure of the **_library_ folder** which contains the main codes
 ├── assets/              # Assets gambar, icon, dan background
 │   ├── icons/           # Kumpulan icon
 │   └── ...              # Foto sertifikat dan dekorasi
-├── index.html           # File utama (Struktur & Vue Instance)
+├── index.php            # File utama
+├── koneksi.php          # Penghubung ke database
 └── style.css            # Custom styling 
 
 ```
@@ -553,6 +558,30 @@ Pada bagian akhir, terdapat kustomisasi tingkat lanjut pada .certificates-sectio
     height: auto;
 }
 ```
+
+## **Part 2: Dynamic Data Integration** ᯓ★
+
+Website yang sebelumnya statis kini dikonversi menjadi dinamis dengan mengintegrasikan database MySQL. Data _skills_ dan _certificates_ tidak lagi di-_hardcode_ di Vue JS, melainkan diambil langsung dari database melalui PHP menggunakan `mysqli`, lalu di-_encode_ menjadi JSON dan di-_pass_ ke Vue instance.
+
+### New Files ⍟
+- [x] `index.php` – Konversi dari `index.html`, kini memuat logika PHP untuk query database.
+- [x] `koneksi.php` – File konfigurasi koneksi ke database MySQL.
+
+### Database Structure ⍟
+
+| Tabel            | Kolom                        | Keterangan                        |
+| ---------------- | ---------------------------- | --------------------------------- |
+| **skills**       | id, name, level              | Menyimpan data skillset           |
+| **certificates** | id, title, year, img         | Menyimpan data sertifikat         |
+
+### How It Works ⍟
+Data dari database di-_fetch_ lewat PHP, lalu di-_pass_ ke Vue menggunakan `json_encode`:
+
+```php
+skills: <?= json_encode(array_values($skills)) ?>,
+certs:  <?= json_encode(array_values($certs)) ?>
+```
+
 <p align="center">
   <i>© 2026 - To the Passengers by Putri. All rights reserved. </i>
 </p>
