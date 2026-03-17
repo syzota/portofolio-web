@@ -242,7 +242,7 @@ Model _footer_ biasa yang _background_-nya diatur blur lewat CSS.
     </div>
 ```
 
-## **Bonus Scores ゛⸝⸝.ᐟ⋆
+## Bonus Scores ゛⸝⸝.ᐟ⋆
 
 ### Bootstrap 5 .✦ ݁˖
 
