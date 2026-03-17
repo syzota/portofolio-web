@@ -22,6 +22,10 @@ Mini Project ini merupakan dokumentasi hasil pembuatan website sederhana **Porto
     * [Program Flows & GUI](#program-flows--graphical-user-interface-gui-)
 * [**Bonus Scores** ゛⸝⸝.ᐟ⋆](#bonus-scores-)
 * [**Style Classes (CSS Explanation)** —͟͟͞͞★](#style-classes-in-the-css-)
+* [**Part 2: Dynamic Data Integration** ᯓ★](#part-2-dynamic-data-integration-)
+    * [New Files](#new-files-)
+    * [Database Structure](#database-structure-)
+    * [How It Works](#how-it-works-)
 
 ## **Portofolio Hands-On** ⸝⸝.ᐟ⋆.ᐟ
 ### Features Checklist ᯓ★
