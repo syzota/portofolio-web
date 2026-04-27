@@ -1,5 +1,4 @@
 /* ================= GLOBAL ================= */
-
 body {
     font-family: 'Jersey 20', sans-serif;
     letter-spacing: 1.5px;
@@ -18,15 +17,6 @@ body::before {
         rgba(0, 120, 60, 0.35)
     );
     z-index: -1;
-}
-
-body::after {
-    content: "ᯓ ⋆˚˙⋆✮ ݁˖⭑.ᐟ✦✮˚˙⋆ᯓ";
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 18px;
-    color: white;
 }
 
 /* ================= NAVBAR FLOATING ================= */
@@ -54,7 +44,7 @@ body::after {
     z-index: 2;
 }
 
-
+/* NAV LINK STYLE */
 .nav-link {
     font-weight: 500;
     position: relative;
@@ -77,7 +67,7 @@ body::after {
 }
 
 .nav-pill {
-    color: #0082ec !important;
+    color: #ffffff !important;
     font-weight: 100;
     padding: 6px 20px;
     border-radius: 40px;
@@ -96,7 +86,6 @@ body::after {
 }
 
 /* ================= HERO ================= */
-
 .hero-section {
     position: relative;
     padding-top: 200px;
@@ -145,7 +134,21 @@ body::after {
     max-width: 520px;
 }
 
-/* ================= card ================= */
+
+/* ================= FULL IMAGE ================= */
+.full-image {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.full-image img {
+    width: 50%;
+    height: 50px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ================= CARD ================= */
 
 .card {
     background: rgba(255, 255, 255, 0.2);
@@ -161,7 +164,9 @@ body::after {
     box-shadow: 0 15px 35px rgba(0, 0, 255, 0.15);
 }
 
-/* ================= progress bar ================= */
+
+
+/* ================= PROGRESS ================= */
 
 .progress {
     height: 18px;
@@ -175,25 +180,32 @@ body::after {
     font-weight: 600;
 }
 
-/* ================= image ================= */
+
+/* ================= FULL IMAGE ================= */
 
 .full-image {
     position: relative;
     overflow: hidden;
-    width: 100%;
-    margin: 10px 0;
 }
 
+
+/* Tambahin sedikit smooth look */
 .full-image img {
     filter: contrast(1.05) brightness(0.98);
     transition: 0.4s ease;
-    width: 50%;
-    height: 50px;
-    object-fit: cover;
-    display: block;
 }
 
-/* ================= nge-blurin bagian sertif  ================= */
+/* Floating sparkle */
+body::after {
+    content: "ᯓ ⋆˚˙⋆✮ ݁˖⭑.ᐟ✦✮˚˙⋆ᯓ";
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 18px;
+    color: white;
+}
+
+/* ================= BLURR ================= */
 
 .certificates-section {
     position: relative;
